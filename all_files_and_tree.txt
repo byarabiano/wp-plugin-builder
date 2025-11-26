@@ -1,4 +1,4 @@
-wp-plugin-builder-fixed 
+wp-plugin-builder
 .devcontainer         
 ├─ Dockerfile         
 ├─ devcontainer.json  
@@ -6,7 +6,7 @@ wp-plugin-builder-fixed
 └─ xdebug.ini         
 ├─ admin                            
 │  └─ package-lock.json             
-├─ wp-plugin-builder-fixed          
+├─ wp-plugin-builder       
 │  ├─ admin                         
 │  │  ├─ build                      
 │  │  │  ├─ admin.css               
