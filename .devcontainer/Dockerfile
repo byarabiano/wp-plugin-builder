@@ -16,4 +16,4 @@ RUN curl -fsSL -o /usr/local/bin/wp https://raw.githubusercontent.com/wp-cli/bui
     && chmod +x /usr/local/bin/wp
 
 USER vscode
-WORKDIR /workspaces/wp-plugin-builder-fixed
+WORKDIR /workspaces/wp-plugin-builder
