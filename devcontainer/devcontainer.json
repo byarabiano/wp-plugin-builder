@@ -1,0 +1,27 @@
+{
+  "name": "WP Plugin Builder Dev",
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+  "workspaceFolder": "/workspaces/wp-plugin-builder",
+  "remoteUser": "vscode",
+
+  "forwardPorts": [5173, 8080, 3306, 80],
+
+  "postCreateCommand": "cd admin && npm install || true",
+
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "eamodio.gitlens",
+        "esbenp.prettier-vscode",
+        "ms-azuretools.vscode-docker",
+        "bmewburn.vscode-intelephense-client",
+        "dbaeumer.vscode-eslint",
+        "yzhang.markdown-all-in-one",
+        "streetsidesoftware.code-spell-checker",
+        "mehedidracula.php-namespace-resolver"
+      ]
+    }
+  }
+}

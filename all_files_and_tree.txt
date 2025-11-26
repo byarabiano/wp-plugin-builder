@@ -1,0 +1,60 @@
+wp-plugin-builder-fixed 
+.devcontainer         
+├─ Dockerfile         
+├─ devcontainer.json  
+├─ php.ini            
+└─ xdebug.ini         
+├─ admin                            
+│  └─ package-lock.json             
+├─ wp-plugin-builder-fixed          
+│  ├─ admin                         
+│  │  ├─ build                      
+│  │  │  ├─ admin.css               
+│  │  │  ├─ admin.js                
+│  │  │  └─ index.html              
+│  │  ├─ src                        
+│  │  │  ├─ api                     
+│  │  │  │  └─ index.js             
+│  │  │  ├─ components              
+│  │  │  │  ├─ editor               
+│  │  │  │  │  ├─ CodeEditor.jsx    
+│  │  │  │  │  └─ ThemeManager.js   
+│  │  │  │  ├─ Dashboard.jsx        
+│  │  │  │  ├─ ExportTab.jsx        
+│  │  │  │  ├─ FileTree.jsx         
+│  │  │  │  ├─ HeaderBar.jsx        
+│  │  │  │  ├─ NewProjectModal.jsx  
+│  │  │  │  ├─ ProjectCard.jsx      
+│  │  │  │  ├─ ProjectsGrid.jsx     
+│  │  │  │  ├─ ProjectsList.jsx     
+│  │  │  │  ├─ SettingsTab.jsx      
+│  │  │  │  └─ Tabs.jsx             
+│  │  │  ├─ context                 
+│  │  │  │  └─ ThemeContext.jsx     
+│  │  │  ├─ pages                   
+│  │  │  │  └─ ProjectEditor.jsx    
+│  │  │  ├─ styles                  
+│  │  │  │  ├─ base.css             
+│  │  │  │  ├─ components.css       
+│  │  │  │  ├─ editor.css           
+│  │  │  │  └─ layout.css           
+│  │  │  ├─ AdminRouter.jsx         
+│  │  │  ├─ App.jsx                 
+│  │  │  ├─ api.js                  
+│  │  │  ├─ index.css               
+│  │  │  └─ main.jsx                
+│  │  ├─ index.html                 
+│  │  ├─ index.php                  
+│  │  ├─ package-lock.json          
+│  │  ├─ package.json               
+│  │  ├─ postcss.config.js          
+│  │  ├─ tailwind.config.js         
+│  │  └─ vite.config.js             
+│  ├─ includes                      
+│  │  ├─ class-api.php              
+│  │  ├─ class-loader.php           
+│  │  ├─ class-projects.php         
+│  │  └─ rest-api.php               
+│  ├─ Readme.txt                    
+│  └─ plugin.php                    
+└─ all_files_and_tree.txt           
