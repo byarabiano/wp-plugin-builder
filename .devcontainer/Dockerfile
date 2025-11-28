@@ -1,4 +1,4 @@
-# Base DevContainer image
+# Base DevContainer image for PHP 8.2
 FROM mcr.microsoft.com/devcontainers/php:1-8.2
 
 # Install system tools
@@ -14,6 +14,10 @@ RUN curl -fsSL https://deb.nodesource.com/setup_18.x | bash - \
 # Install WP-CLI manually
 RUN curl -fsSL -o /usr/local/bin/wp https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar \
     && chmod +x /usr/local/bin/wp
+
+# Copy PHP configuration
+COPY php.ini /usr/local/etc/php/php.ini
+COPY xdebug.ini /usr/local/etc/php/conf.d/xdebug.ini
 
 USER vscode
 WORKDIR /workspaces/wp-plugin-builder

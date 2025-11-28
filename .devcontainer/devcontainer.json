@@ -6,9 +6,9 @@
   "workspaceFolder": "/workspaces/wp-plugin-builder",
   "remoteUser": "vscode",
 
-  "forwardPorts": [5173, 8080, 3306, 80],
+  "forwardPorts": [5173, 5174, 8080, 3306, 80],
 
-  "postCreateCommand": "cd admin && npm install || true",
+  "postCreateCommand": "cd wp-plugin-builder/admin && npm install || true",
 
   "customizations": {
     "vscode": {
