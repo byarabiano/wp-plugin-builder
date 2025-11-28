@@ -1,19 +1,28 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import AdminRouter from "./AdminRouter";
+import App from "./App";
 import "./index.css";
 
-function mount() {
-  const rootEl = document.getElementById("wp-pb-root");
+// -------------------------
+// Mount React into WordPress Admin
+// -------------------------
+
+function mountReactApp() {
+  const rootEl = document.getElementById("wpb-root");
 
   if (!rootEl) {
-    return setTimeout(mount, 50);
+    return setTimeout(mountReactApp, 50);
   }
 
   if (!rootEl.dataset.mounted) {
     rootEl.dataset.mounted = "1";
-    ReactDOM.createRoot(rootEl).render(<AdminRouter />);
+
+    ReactDOM.createRoot(rootEl).render(
+      <React.StrictMode>
+        <App />
+      </React.StrictMode>
+    );
   }
 }
 
-mount();
+mountReactApp();

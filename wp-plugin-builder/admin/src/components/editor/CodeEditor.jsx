@@ -1,6 +1,7 @@
 // admin/src/components/editor/CodeEditor.jsx
 import React, { useEffect, useRef, useState } from "react";
 import * as monaco from "monaco-editor";
+import "monaco-editor/esm/vs/editor/editor.api";
 import "../../styles/editor.css";
 
 /*
@@ -12,11 +13,10 @@ import "../../styles/editor.css";
 */
 
 // minimal languages (monaco should include them via package install)
-import "monaco-editor/esm/vs/basic-languages/php/php.contribution";
-import "monaco-editor/esm/vs/basic-languages/javascript/javascript.contribution";
-import "monaco-editor/esm/vs/basic-languages/css/css.contribution";
-import "monaco-editor/esm/vs/basic-languages/json/json.contribution";
-import "monaco-editor/esm/vs/editor/editor.api";
+import 'monaco-editor/esm/vs/basic-languages/php/php.contribution.js';
+import 'monaco-editor/esm/vs/basic-languages/javascript/javascript.contribution.js';
+import 'monaco-editor/esm/vs/basic-languages/css/css.contribution.js';
+import "monaco-editor/esm/vs/language/json/monaco.contribution.js";
 
 // Inline fallback worker to avoid external worker files in WP admin.
 // Note: this is a minimal worker — advanced language features may need proper workers.
