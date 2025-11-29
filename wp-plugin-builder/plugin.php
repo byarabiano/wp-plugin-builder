@@ -50,7 +50,7 @@ add_action('admin_menu', function () {
 function wpb_render_admin_app()
 {
     ?>
-    <div id="wpb-admin-root"></div>
+    <div id="wpb-root"></div>
     <?php
 }
 
