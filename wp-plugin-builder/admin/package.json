@@ -10,6 +10,8 @@
   "dependencies": {
     "@vitejs/plugin-react": "^4.7.0",
     "axios": "^1.13.2",
+    "file-saver": "^2.0.5",
+    "jszip": "^3.10.1",
     "monaco-editor": "^0.55.1",
     "react": "^18.2.0",
     "react-dnd": "^16.0.1",
