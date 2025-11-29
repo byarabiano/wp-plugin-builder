@@ -1,0 +1,19 @@
+/* src/ui-builder/components.css */
+
+.ui-lib-btn {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 8px;
+    background: #f1f1f1;
+    border: 1px solid #ddd;
+    cursor: pointer;
+    text-align: right;
+}
+
+.ui-element {
+    border: 1px dashed #ccc;
+    padding: 10px;
+    margin: 8px 0;
+    background: #fff;
+    cursor: move;
+}

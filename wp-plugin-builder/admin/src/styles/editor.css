@@ -1,0 +1,213 @@
+/* admin/src/styles/editor.css
+   Custom platform editor theme (B) — Dark-first with Light option.
+*/
+
+/* ===== Variables (light & dark are toggled via .wpb-theme--light on body) ===== */
+:root {
+  --bg: #0f1720;
+  --panel: #11161a;
+  --muted: #97a0a9;
+  --text: #e6eef6;
+  --accent: #4fb0ff;
+  --border: rgba(255,255,255,0.06);
+  --toolbar-bg: #0e1418;
+  --filetree-bg: #0d1316;
+  --editor-bg: #0b0f12;
+  --shadow: rgba(2,6,23,0.6);
+  --btn-bg: #1f2933;
+  --btn-hover: #27343d;
+}
+
+/* Light theme overrides */
+body.wpb-theme--light {
+  --bg: #f6f8fb;
+  --panel: #ffffff;
+  --muted: #6b7280;
+  --text: #0b1220;
+  --accent: #2563eb;
+  --border: rgba(11,18,32,0.06);
+  --toolbar-bg: #fafbfe;
+  --filetree-bg: #fbfdff;
+  --editor-bg: #ffffff;
+  --shadow: rgba(16,24,40,0.04);
+  --btn-bg: #ffffff;
+  --btn-hover: #f3f5f8;
+}
+
+/* ===== Global layout basics ===== */
+.wpb-editor-container {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  background: var(--bg);
+  color: var(--text);
+  padding: 14px;
+  min-height: 100%;
+  box-sizing: border-box;
+  font-family: Inter, "Segoe UI", Roboto, Arial, sans-serif;
+}
+
+/* ===== Header / toolbar ===== */
+.wpb-editor-header {
+  display:flex;
+  align-items:center;
+  gap:12px;
+  justify-content:space-between;
+}
+
+.wpb-editor-title { font-weight:700; font-size:18px; color:var(--text) }
+
+.wpb-btn {
+  padding: 8px 12px;
+  background: var(--btn-bg);
+  color: var(--text);
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  cursor: pointer;
+}
+.wpb-btn:hover { background: var(--btn-hover) }
+
+/* ===== Editor layout ===== */
+.wpb-editor-body {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 12px;
+  align-items: start;
+}
+
+/* Mobile: stack */
+@media (max-width: 880px) {
+  .wpb-editor-body { grid-template-columns: 1fr; }
+}
+
+/* ===== FileTree (left) ===== */
+.wpb-filetree {
+  background: var(--filetree-bg);
+  border: 1px solid var(--border);
+  padding: 10px;
+  border-radius: 8px;
+  color: var(--text);
+  overflow-y: auto;
+  max-height: calc(100vh - 150px);
+}
+
+/* folder / file styles */
+.wpb-folder, .wpb-file {
+  padding: 6px 8px;
+  border-radius:6px;
+  display:flex;
+  align-items:center;
+  gap:8px;
+  cursor:pointer;
+  user-select:none;
+}
+.wpb-folder:hover, .wpb-file:hover { background: rgba(255,255,255,0.02) }
+.wpb-file.active {
+  background: linear-gradient(90deg, rgba(79,176,255,0.12), rgba(79,176,255,0.04));
+  border-left: 3px solid var(--accent);
+  padding-left: 6px;
+}
+
+/* small muted text */
+.wpb-file small { display:block; color:var(--muted); font-size:12px }
+
+/* ===== Editor container (right) ===== */
+.wpb-editor-content {
+  display:flex;
+  flex-direction:column;
+  gap: 10px;
+}
+
+/* Code editor wrapper and toolbar */
+.wpb-codeeditor-wrapper {
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  background: var(--panel);
+  display:flex;
+  flex-direction:column;
+  min-height: 420px;
+  box-shadow: 0 6px 18px var(--shadow);
+}
+
+/* toolbar */
+.wpb-codeeditor-toolbar {
+  display:flex;
+  align-items:center;
+  gap:10px;
+  padding:8px 12px;
+  background: var(--toolbar-bg);
+  border-bottom: 1px solid var(--border);
+}
+.wpb-codeeditor-toolbar .left { display:flex; gap:10px; align-items:center; flex:1 }
+
+/* theme select */
+.wpb-theme-select {
+  padding:6px 8px;
+  border-radius:6px;
+  border:1px solid var(--border);
+  background: transparent;
+  color: var(--text);
+  cursor:pointer;
+}
+
+/* small toolbar buttons */
+.wpb-toolbar-btn {
+  padding:6px 9px;
+  border-radius:6px;
+  border:1px solid transparent;
+  background:transparent;
+  color: var(--text);
+  cursor:pointer;
+}
+.wpb-toolbar-btn:hover { background: rgba(255,255,255,0.02); border-color: var(--border) }
+
+/* file path display */
+.wpb-current-path { font-weight:600; color:var(--muted); font-size:13px }
+
+/* editor canvas */
+.wpb-editor-canvas {
+  height: calc(60vh);
+  min-height: 360px;
+  background: var(--editor-bg);
+}
+
+/* when fullscreen */
+.wpb-fullscreen {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  right: 10px;
+  bottom: 10px;
+  z-index: 99999;
+  padding: 12px;
+  display:flex;
+  flex-direction:column;
+}
+.wpb-fullscreen .wpb-editor-canvas { height: calc(100vh - 120px) }
+
+/* tabs / panels */
+.wpb-tabs {
+  display:flex;
+  gap:8px;
+  align-items:center;
+}
+.wpb-tab {
+  padding:8px 12px;
+  border-radius:8px;
+  background:transparent;
+  color:var(--muted);
+  cursor:pointer;
+}
+.wpb-tab-active {
+  background: linear-gradient(90deg, rgba(79,176,255,0.08), rgba(79,176,255,0.02));
+  color:var(--text);
+  border:1px solid rgba(79,176,255,0.12);
+}
+
+/* small helpers */
+.wpb-muted { color:var(--muted) }
+.wpb-gap { height:12px }
+
+/* Settings & Export simple boxes */
+.wpb-settings-tab, .wpb-export { padding:12px; background:var(--panel); border-radius:8px; border:1px solid var(--border); color:var(--text) }
